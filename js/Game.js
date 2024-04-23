@@ -4,7 +4,7 @@
 
 class Game {
     constructor () {
-        this. missed = 0;
+        this.missed = 0;
         this.phrases = [
             "Life is beautiful",
             "Friends are the family we choose",
@@ -13,7 +13,7 @@ class Game {
             "Even miracles take a little time"
         ]
             
-        this.activePhrase = null
+        this.activePhrase = null;
     }
 
     startGame() {
@@ -21,9 +21,9 @@ class Game {
 
     }
 
-    getRandomPhrase() {
-
-
+    getRandomPhrase() {        
+        const index = Math.floor(Math.random() * 5);
+        return this.phrases[index];
     }
 
     handleInteraction() {
