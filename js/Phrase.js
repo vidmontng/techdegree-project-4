@@ -17,7 +17,7 @@ class Phrase {
             if (letter !== " ") {
                 HTMLforSplitPhrase.className = `hide letter ${letter}`;                
             } else {
-                HTMLforSplitPhrase.className = "space";
+                HTMLforSplitPhrase.className = `hide space`;
             }
             HTMLforSplitPhrase.innerHTML = `${letter}`;
             placeholder.appendChild(HTMLforSplitPhrase);

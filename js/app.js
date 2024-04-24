@@ -4,4 +4,8 @@
 
 const phrase = new Phrase("Life is beautiful");
 
-phrase.addPhraseToDisplay();
+
+const game = new Game();
+game.startGame();
+
+
