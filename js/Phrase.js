@@ -21,17 +21,42 @@ class Phrase {
             }
             HTMLforSplitPhrase.innerHTML = `${letter}`;
             placeholder.appendChild(HTMLforSplitPhrase);
+           
             });
+           
     }
 
     checkLetter() {
+        //event listener for each key on the keyboard
+        const keys = document.querySelectorAll('button[class="key"]');
+        const hiddenLetters = document.getElementsByClassName('hide letter');
+        keys.forEach(key => {
+            key.addEventListener('click', (e) => {
+                const chosenLetter = e.target.textContent;
+                const currentPhrase = this.phrase.split('');
+                currentPhrase.forEach(letter => {
+                if (letter === chosenLetter) {
+                    console.log(hiddenLetters);
+                    //THIS IS WRONG
+                    // hiddenLetters.forEach(hiddenLetter => {
+                    //     if (hiddenLetter.className === `hide letter ${letter}`) {
+                    //         hiddenLetter. = `show letter ${letter}`;
+                    //     }
+
+                    // });
 
 
-    }
 
+                    }
+                });
+        });
+        
+    })
+}
+
+    
     showMatchedLetter() {
 
 
     }
-
 }

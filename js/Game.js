@@ -24,7 +24,8 @@ class Game {
 
     getRandomPhrase() {        
         const index = Math.floor(Math.random() * 5);
-        return this.phrases[index];
+        this.activePhrase = this.phrases[index];
+        return this.activePhrase;
     }
 
     handleInteraction() {
