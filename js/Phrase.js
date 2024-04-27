@@ -4,7 +4,7 @@
 
 class Phrase {
     constructor (phrase) {
-        this.phrase = phrase.toLowerCase();        
+        this.phrase = phrase.toLowerCase();
     }
 
     addPhraseToDisplay() {
@@ -12,47 +12,41 @@ class Phrase {
         const splitPhrase = this.phrase.split('');
         let HTMLforSplitPhrase;
         
-        splitPhrase.forEach(letter => {
+        splitPhrase.forEach(currentLetter => {
             HTMLforSplitPhrase = document.createElement('li');
-            if (letter !== " ") {
-                HTMLforSplitPhrase.className = `hide letter ${letter}`;                
+            if (currentLetter !== " ") {
+                HTMLforSplitPhrase.classList.add('hide','letter', `${currentLetter}`);   
             } else {
-                HTMLforSplitPhrase.className = `hide space`;
+                HTMLforSplitPhrase.classList.add('space'); 
             }
-            HTMLforSplitPhrase.innerHTML = `${letter}`;
+            HTMLforSplitPhrase.innerHTML = `${currentLetter}`;
             placeholder.appendChild(HTMLforSplitPhrase);
-           
             });
-           
-    }
+   }
+
+
 
     checkLetter() {
+        const keyboard = document.querySelectorAll('.key');
+        const hiddenLetters = document.getElementsByClassName('letter');
         //event listener for each key on the keyboard
-        const keys = document.querySelectorAll('button[class="key"]');
-        const hiddenLetters = document.getElementsByClassName('hide letter');
-        keys.forEach(key => {
+        keyboard.forEach(key => {
             key.addEventListener('click', (e) => {
-                const chosenLetter = e.target.textContent;
-                const currentPhrase = this.phrase.split('');
-                currentPhrase.forEach(letter => {
-                if (letter === chosenLetter) {
-                    console.log(hiddenLetters);
-                    //THIS IS WRONG
-                    // hiddenLetters.forEach(hiddenLetter => {
-                    //     if (hiddenLetter.className === `hide letter ${letter}`) {
-                    //         hiddenLetter. = `show letter ${letter}`;
-                    //     }
-
-                    // });
-
-
-
+                const key = e.target;
+                const keyValue = key.textContent;
+                //looping through all hidden letters
+                for (let i=0; i<hiddenLetters.length; i++) {
+                    const hiddenLetter = hiddenLetters[i];
+                    //if a hidden letter contains CSS class name that matches the selected letter
+                    if (hiddenLetter.classList.contains(`${keyValue}`)) {
+                        hiddenLetter.classList.remove('hide');
+                        hiddenLetter.classList.add('show');
                     }
-                });
+                }
+            });
         });
-        
-    })
-}
+    } 
+  
 
     
     showMatchedLetter() {

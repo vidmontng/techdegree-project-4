@@ -12,7 +12,5 @@ startGameButton.addEventListener('click', () =>  {
 });
 
 
-
-
-
 phrase.checkLetter();
+
