@@ -13,7 +13,7 @@ class Game {
             "Even miracles take a little time"
         ]
             
-        this.activePhrase = null;
+        this.activePhrase = null; //gets set up in the end of getRandomPhrase() method
     }
 
     startGame() {

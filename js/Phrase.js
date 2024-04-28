@@ -25,32 +25,30 @@ class Phrase {
    }
 
 
-
-    checkLetter() {
-        const keyboard = document.querySelectorAll('.key');
-        const hiddenLetters = document.getElementsByClassName('letter');
-        //event listener for each key on the keyboard
-        keyboard.forEach(key => {
-            key.addEventListener('click', (e) => {
-                const key = e.target;
-                const keyValue = key.textContent;
-                //looping through all hidden letters
-                for (let i=0; i<hiddenLetters.length; i++) {
-                    const hiddenLetter = hiddenLetters[i];
-                    //if a hidden letter contains CSS class name that matches the selected letter
-                    if (hiddenLetter.classList.contains(`${keyValue}`)) {
-                        hiddenLetter.classList.remove('hide');
-                        hiddenLetter.classList.add('show');
-                    }
-                }
-            });
-        });
+    /**Checks if the letter selected by the player matches a letter in the phrase.
+     * Evokes showMatchedLetter() method
+     */
+    checkLetter(keyValue) {
+        const match = this.phrase.includes(keyValue);
+        if (match) {
+            this.showMatchedLetter(keyValue);
+        }
     } 
   
 
+    /**Selects and reveals all hidden letters that have a class equal to
+     * the letter chosen by the player
+     */
+    showMatchedLetter(keyValue) {
+        const hiddenLetters = document.getElementsByClassName(`${keyValue}`);
+        for (let i=0; i<hiddenLetters.length; i++) {
+            hiddenLetters[i].classList.remove('hide');
+            hiddenLetters[i].classList.add('show');
+        }
+    } 
     
-    showMatchedLetter() {
 
 
-    }
+
+
 }
