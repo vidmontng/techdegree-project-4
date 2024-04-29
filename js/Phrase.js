@@ -31,7 +31,7 @@ class Phrase {
     checkLetter(keyValue) {
         const match = this.phrase.includes(keyValue);
         if (match) {
-            this.showMatchedLetter(keyValue);
+            return true;
         }
     } 
   

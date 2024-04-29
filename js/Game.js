@@ -29,18 +29,33 @@ class Game {
     }
 
     handleInteraction() {
-
-
+        keyboard.forEach(key => {
+            key.addEventListener('click', (e) => {
+                const key = e.target;
+                const keyValue = key.textContent;
+                if (phrase.checkLetter(keyValue)) {
+                    key.disabled = true;
+                    key.classList.add('chosen');
+                    phrase.showMatchedLetter(keyValue);
+                } else {
+                    key.classList.add('wrong');
+                    this.removeLife();
+                    this.missed ++;
+                }
+            });
+        });
     }
 
     removeLife() {
-
-
+        const liveHeart = document.querySelector('img[src="images/liveHeart.png"]');
+        liveHeart.src = "images/lostHeart.png";
     }
 
     checkForWin() {
-
-
+       const lostHearts = document.querySelector('img[src="images/lostHeart.png"]');
+       if (lostHearts.length < 5) {
+            
+       }
     }
 
     gameOver() {
