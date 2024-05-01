@@ -17,7 +17,7 @@ class Game {
     }
 
     startGame() {
-        document.querySelector('#overlay').style.display = 'none';
+        overlay.style.display = 'none';
         this.getRandomPhrase();
         phrase.addPhraseToDisplay();
     }
@@ -40,8 +40,8 @@ class Game {
                 } else {
                     key.classList.add('wrong');
                     this.removeLife();
-                    this.missed ++;
                 }
+                this.checkForWin();
             });
         });
     }
@@ -49,18 +49,28 @@ class Game {
     removeLife() {
         const liveHeart = document.querySelector('img[src="images/liveHeart.png"]');
         liveHeart.src = "images/lostHeart.png";
+        this.missed++;
     }
 
     checkForWin() {
-       const lostHearts = document.querySelector('img[src="images/lostHeart.png"]');
-       if (lostHearts.length < 5) {
-            
-       }
-    }
+        const hiddenLetters = document.getElementsByClassName('hide');
 
-    gameOver() {
+        if (this.missed === 5 && hiddenLetters.length !== 0) {
+            this.gameOver('lose', 'Better luck next time!');
 
+        } else if (this.missed < 5 && hiddenLetters.length === 0) {
+            this.gameOver('win', 'Congratulations!');
 
+        }
+        
+        }
+    
+
+    gameOver(winOrLoss, message) {        
+        overlay.style.display = 'block';
+        overlay.classList.remove('start');
+        overlay.classList.add(winOrLoss);
+        gameOverMessage.textContent = message;
     }
 
 
