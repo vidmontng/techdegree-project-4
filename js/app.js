@@ -21,7 +21,7 @@ const gameOverMessage = document.querySelector('#game-over-message');
 
 const game = new Game();
 game.startGame();
-   
+console.log(`Current phrase - ${game.activePhrase.phrase}`);
 
 
  
