@@ -7,8 +7,11 @@ class Phrase {
         this.phrase = phrase.toLowerCase();
     }
 
+
+    /***
+     * Display phrase on game board
+     */
     addPhraseToDisplay() {
-        const placeholder = document.querySelector('#phrase ul');
         const splitPhrase = this.phrase.split('');
         let HTMLforSplitPhrase;
         
@@ -28,19 +31,22 @@ class Phrase {
     /**Checks if the letter selected by the player matches a letter in the phrase.
      * Evokes showMatchedLetter() method
      */
-    checkLetter(keyValue) {
-        const match = this.phrase.includes(keyValue);
-        if (match) {
-            return true;
-        }
-    } 
+    // checkLetter(letter) {
+    //     const match = this.phrase.includes(letter);
+    //     if (match) {
+    //         console.log('true');
+    //         // return true;
+    //     } else {
+    //         console.log('false');
+    //     }
+    // } 
   
 
     /**Selects and reveals all hidden letters that have a class equal to
      * the letter chosen by the player
      */
-    showMatchedLetter(keyValue) {
-        const hiddenLetters = document.getElementsByClassName(`${keyValue}`);
+    showMatchedLetter(key) {
+        const hiddenLetters = document.getElementsByClassName(`${key}`);
         for (let i=0; i<hiddenLetters.length; i++) {
             hiddenLetters[i].classList.remove('hide');
             hiddenLetters[i].classList.add('show');
