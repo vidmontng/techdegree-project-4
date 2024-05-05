@@ -36,40 +36,38 @@ class Game {
     }
 
     handleInteraction(button, buttonValue) {
-
-        // button.disabled = true;
-        // button.classList.add('chosen');
-        console.log(button, buttonValue);
-        // phrase.checkLetter(buttonValue);
-        // if (phrase.checkLetter(letter)) {
-            
-        //     phrase.showMatchedLetter(letter);
-        // } else {
-        //     button.classList.add('wrong');
-        //     this.removeLife();
-        // }
-        // this.checkForWin();
-    }
-
+        button.disabled = true;
+        const phrase = this.activePhrase;
+           if (phrase.checkLetter(buttonValue)) {
+                phrase.showMatchedLetter(buttonValue);
+                button.classList.add('chosen');
+           } else {
+                button.classList.add('wrong');
+                this.removeLife();
+            }
+            this.checkForWin();
+    } 
     
 
     removeLife() {
         const liveHeart = document.querySelector('img[src="images/liveHeart.png"]');
-        liveHeart.src = "images/lostHeart.png";
-        this.missed++;
+            liveHeart.src = "images/lostHeart.png";
+            this.missed++;
     }
 
+
+    /**
+    * Checks for winning 
+    * @returns {boolean} True if a player won the game, false if didn't.
+    */
     checkForWin() {
-        const hiddenLetters = document.getElementsByClassName('hide');
-
-        if (this.missed === 5 && hiddenLetters.length !== 0) {
-            this.gameOver('lose', 'Better luck next time!');
-
-        } else if (this.missed < 5 && hiddenLetters.length === 0) {
+        if (hiddenLetters.length === 0) {
             this.gameOver('win', 'Congratulations!');
-        }
+        }  else if (this.missed === 5) {
+            this.gameOver('lose', 'Better luck next time!');
+        }      
     }
-    
+
 
     gameOver(winOrLoss, message) {        
         overlay.style.display = 'block';

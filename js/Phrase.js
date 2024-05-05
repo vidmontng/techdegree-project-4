@@ -31,30 +31,26 @@ class Phrase {
     /**Checks if the letter selected by the player matches a letter in the phrase.
      * Evokes showMatchedLetter() method
      */
-    // checkLetter(letter) {
-    //     const match = this.phrase.includes(letter);
-    //     if (match) {
-    //         console.log('true');
-    //         // return true;
-    //     } else {
-    //         console.log('false');
-    //     }
-    // } 
+    checkLetter(letter) {
+        const match = this.phrase.includes(letter);
+        if (match) {
+            return true;   
+        } else {          
+            return false;  
+        }
+    } 
   
 
     /**Selects and reveals all hidden letters that have a class equal to
      * the letter chosen by the player
+     * @param (string) letter - Letter to display
      */
-    showMatchedLetter(key) {
-        const hiddenLetters = document.getElementsByClassName(`${key}`);
+    showMatchedLetter(letter) {
+        const hiddenLetters = document.getElementsByClassName(`${letter}`);
         for (let i=0; i<hiddenLetters.length; i++) {
             hiddenLetters[i].classList.remove('hide');
             hiddenLetters[i].classList.add('show');
+            console.log(this.phrase);
         }
     } 
-    
-
-
-
-
 }
