@@ -16,7 +16,6 @@ class Game {
         this.activePhrase = null; //gets set up in the end of getRandomPhrase() method
     }
 
-
 /**
 * Starts a game by selecting a random phrase and displaying it 
 */
@@ -47,14 +46,12 @@ class Game {
             }
             this.checkForWin();
     } 
-    
 
     removeLife() {
         const liveHeart = document.querySelector('img[src="images/liveHeart.png"]');
             liveHeart.src = "images/lostHeart.png";
             this.missed++;
     }
-
 
     /**
     * Checks for winning 
