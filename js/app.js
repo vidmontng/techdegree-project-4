@@ -42,14 +42,49 @@ startGameButton.addEventListener('click', () =>  {
 
  
 
-keyboard.addEventListener('click', (e) => {
-    let key = e.target;
+// keyboard.addEventListener('kewdown', (e) => {
+//     let key = e.target;
 
-    if (key.tagName === 'BUTTON') {
-        const keyValue = key.textContent;
-        game.handleInteraction(key, keyValue);
-    }
+//     if (key.tagName === 'BUTTON') {
+//         const keyValue = key.textContent;
+//         game.handleInteraction(key, keyValue);
+//     }
+// });
+
+
+['click', 'keydown'].forEach(event => {
+    keyboard.addEventListener(event, (e) => {
+        
+        for (let i=0; i < keys.length; i ++) {
+            keys[i] = e.target;
+            const letter = e.target.textContent;
+            if (event === 'click'){
+                console.log(e.target.textContent);
+            } else if (event === 'keydown' && letter === e.key){
+                console.log(e.target);
+            }
+            // keys[i].disabled = true;
+            //     keys[i].classList.remove('key');
+            //     keys[i].classList.add('chosen');
+        }
+    })
 });
+
+
+
+// document.addEventListener('keydown', (event) => {
+//            for (let i=0; i < keys.length; i ++) {
+//              const key = keys[i];
+//              const letter = key.textContent;
+
+//                 if (letter === event.key) {
+//                     key.classList.remove('key');
+//                     key.classList.add('chosen');
+
+//                 }
+//            }
+//       })
+
 
 
 
