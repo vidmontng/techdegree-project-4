@@ -40,61 +40,34 @@ startGameButton.addEventListener('click', () =>  {
 });
 
 
- 
+/***
+ * Event handler that lets users chose a letter by clicking
+ * on a virtual keyboard AND use their physical keybord
+ * Two event implemented in one event listener
+ */
 ['keydown', 'click'].forEach(event => {
-    document.addEventListener(event, (e) => {
-        
-        
-        
-        keys.forEach(button => {
-          
-          const letter = button.textContent;
-
-            if (event === 'keydown' && letter === e.key) {
-                 game.handleInteraction(button, letter);
-             
-            }
-
-//             if (event === 'click' && e.target.className === 'key') {
-// console.log(e.target);            
-//            }
-
+        document.addEventListener(event, (e) => {
+            if (event === 'click' && e.target.className === 'key') {
+                game.handleInteraction(e.target, e.target.textContent);
+            } 
             
-});
-
-
-    
-   })
-
-
-
-
-});
-
-
-
-       
-        
-//THIS WoRKS!!!
-// document.addEventListener('keydown', (event) => {
-//            for (let i=0; i < keys.length; i ++) {
-//              const key = keys[i];
-//              const letter = key.textContent;
-
-//                 if (letter === event.key) {
-//                     game.handleInteraction(key, letter);
-
-//                 }
-//            }
-//       })
+            else if (event === 'keydown') {
+                keys.forEach(button => {
+                const letter = button.textContent;
+                    if (letter === e.key) {
+                        game.handleInteraction(button, letter);
+                    }
+                })
+            }
+        })
+})
 
 
 
 
 
 
-    
 
-   
+
 
 
