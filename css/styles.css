@@ -3,6 +3,14 @@
 
 /* Variables */
 
+/*
+* - added shadow to all buttons
+* - made the border of all buttons thicker and changed the color to pink
+* - made the border of the Start button thicker and changed it's color to dark-gray
+* - increased margins for all hidden letters
+* - changed font family, size and color of the h2 header element;
+*/
+
 :root {
   --color-win: #78CF82;
   --color-lose: #D94545;
@@ -38,7 +46,8 @@ li, ol, ul {
 h2 {
   margin: 0;
   text-transform: uppercase;
-  font-size: var(--font-size-large);
+  font-family: 'Fantasy', 'Papyrus';
+  font-size: 4em;
   margin: 0;
 }
 
@@ -48,8 +57,9 @@ h1 {
 
 button {
   margin: 6px;
-  border: 1px solid transparent;
+  border: 2px solid rgba(248, 183, 239, 0.507);
   padding: .5rem 1rem;
+  box-shadow: 0 4px 4px 0 rgba(95, 67, 67, 0.2), 0 4px 4px 0 rgba(0,0,0,0.19);
   color: var(--color-keys);
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
@@ -63,6 +73,7 @@ button {
 #btn__reset {
 	width: 200px;
 	margin: 0 auto;
+  border: 6px solid rgba(25, 31, 27, 0.507);
 }
 
 .main-container {
@@ -86,7 +97,7 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: #5672a7;
 }
 
 
@@ -97,7 +108,9 @@ button {
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
-  margin-right: 2px;
+  margin-right: 3px;
+  margin-left: 3px;
+  box-shadow: 3px 3px 3px 3px rgba(153, 128, 152, 0.144);
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
@@ -173,6 +186,11 @@ button {
   left: 0;
   right: 0;
   border-radius: 5px;
+}
+
+.btn-win {
+  color: rgba(66, 53, 175, 0);
+
 }
 
 .title {
