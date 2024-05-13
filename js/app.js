@@ -7,12 +7,24 @@ const startGameButton = document.querySelector('#btn__reset');
 const overlay = document.getElementById('overlay');
 const keys = document.querySelectorAll('.key');
 const keyboard = document.querySelector('#qwerty');
-const hearts = document.getElementsByTagName('img');
-const liveHearts = document.querySelectorAll('img[src="images/liveHeart.png"]');
+const hearts = document.getElementsByClassName('tries');
+// const liveHearts = document.querySelectorAll('img[src="images/liveHeart.png"]');
 const gameOverMessage = document.querySelector('#game-over-message');
+const winMessage = document.querySelector('.congrats');
+const lostMessage = document.querySelector('.sorry');
 const hiddenLetters = document.getElementsByClassName('hide');
 const revealedLetters = document.getElementsByClassName('show');
+
+const happyEmoji = document.querySelector('.happy');
+const sadEmoji = document.querySelector('.sad');
+
 let game; 
+
+    winMessage.style.display = 'none';
+    lostMessage.style.display = 'none';
+    happyEmoji.style.display = 'none';
+    sadEmoji.style.display = 'none';
+
 
 /**Event listener for the "Start Game button"
  * Initializes new game object
@@ -21,6 +33,10 @@ let game;
 startGameButton.addEventListener('click', () =>  {
     placeholder.textContent = '';
     overlay.classList.remove('win', 'lose');
+    winMessage.style.display = 'none';
+    lostMessage.style.display = 'none';
+    happyEmoji.style.display = 'none';
+    sadEmoji.style.display = 'none';
     
     for (let i=0; i<keys.length; i++) {
         let key = keys[i];

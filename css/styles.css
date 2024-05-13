@@ -4,17 +4,25 @@
 /* Variables */
 
 /*
-* - added shadow to all buttons
+* - added shadows to all buttons
 * - made the border of all buttons thicker and changed the color to pink
 * - made the border of the Start button thicker and changed it's color to dark-gray
 * - increased margins for all hidden letters
-* - changed font family, size and color of the h2 header element;
+* - changed font family, size and color of the h2 header element ("Phrase hunter");
+* - changed font family, size and color of the h1 title element;
+* - added 'win' and 'lose' class specifically for #game-over-message element:
+*     'win' - increased the font to 155px; changed the font family to Cursive, Lucida Handwriting; 
+              changed the color to purple; added animation that will rotate the element 1080degrees for 1second.
+     'lose' - set up the font to 60px; font-family - Sans-serif, Verdana; color - purple;
+  - 'color-win' - backgroun color for the case if a player won has been changed to pale pink
+  - 'color-lose' - changed to dark yellow
+  - 'color-start' - the background of the overlay was changed to pale blue. 
 */
 
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
-  --color-start: #5b85b7;
+  --color-win: #e2bae2;
+  --color-lose: #daa04a;
+  --color-start: #96c8df;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
@@ -54,6 +62,7 @@ h2 {
 h1 {
   font-size: 30px;
 }
+
 
 button {
   margin: 6px;
@@ -120,8 +129,6 @@ button {
   width: 15px;
 }
 
-
-
 .show {
   color: #fff;
   background-color: #4ac0d5;
@@ -134,7 +141,6 @@ button {
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
 }
-
 
 /* Keyboard */
 
@@ -194,11 +200,13 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: #5672a7;
+  font-weight: bolder;
+  font-size: 75px;
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #b4ddf5;
 }
 
 .start a {
@@ -213,10 +221,20 @@ button {
   color: var(--color-win);
 }
 
+
+
 .lose {
   background-color: #f5785f;
 }
 
 .lose a {
   color: var(--color-lose);
+}
+
+.happy {
+  margin: 30px auto 30px auto;
+}
+
+.sad {
+  margin: 80px auto 30px auto;
 }
