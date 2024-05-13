@@ -7,8 +7,7 @@ const startGameButton = document.querySelector('#btn__reset');
 const overlay = document.getElementById('overlay');
 const keys = document.querySelectorAll('.key');
 const keyboard = document.querySelector('#qwerty');
-const hearts = document.getElementsByClassName('tries');
-// const liveHearts = document.querySelectorAll('img[src="images/liveHeart.png"]');
+const hearts = document.querySelectorAll('img[src="images/liveHeart.png"]');
 const gameOverMessage = document.querySelector('#game-over-message');
 const winMessage = document.querySelector('.congrats');
 const lostMessage = document.querySelector('.sorry');
@@ -67,7 +66,7 @@ startGameButton.addEventListener('click', () =>  {
                 game.handleInteraction(e.target, e.target.textContent);
             } 
             
-            else if (event === 'keydown') {
+            else if (event === 'keydown' && overlay.style.display === 'none') {
                 keys.forEach(button => {
                 const letter = button.textContent;
                     if (letter === e.key) {

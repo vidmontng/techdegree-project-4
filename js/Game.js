@@ -47,10 +47,8 @@ class Game {
             this.checkForWin();
     } 
 
-
-//NOT WORKING!!!
     removeLife() {
-        const liveHeart = document.getElementsByTagName('img');
+        const liveHeart = document.querySelector('img[src="images/liveHeart.png"]');
             liveHeart.src = "images/lostHeart.png";
             this.missed++;
     }
@@ -61,7 +59,7 @@ class Game {
     */
     checkForWin() {
         if (hiddenLetters.length === 0) {
-            this.gameOver('win', happyEmoji, winMessage); //added span 'congratulations' just to try CSS effect
+            this.gameOver('win', happyEmoji, winMessage);
         }  else if (this.missed === 5) {
             this.gameOver('lose', sadEmoji, lostMessage);
         }      
@@ -72,9 +70,9 @@ class Game {
         overlay.style.display = 'block';
         overlay.classList.remove('start');
         overlay.classList.add(winOrLoss);
-        emoji.style.display = 'block';
         message.style.display = 'block';
-
+        emoji.style.display = 'block';
     }
 
-    }
+
+}
