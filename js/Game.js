@@ -16,9 +16,9 @@ class Game {
         this.activePhrase = null; //gets set up in the end of getRandomPhrase() method
     }
 
-/**
-* Starts a game by selecting a random phrase and displaying it 
-*/
+    /**
+    * Starts a game by selecting a random phrase and displaying it 
+    */
     startGame() {
         overlay.style.display = 'none';
         this.activePhrase = this.getRandomPhrase();
@@ -26,7 +26,7 @@ class Game {
     }
 
     /**
-     * selects random phrase from the phrase property
+     * Selects random phrase from the phrase property
      * @returns {Object} Phrase object chosen to be used
      */
     getRandomPhrase() {        
@@ -34,6 +34,10 @@ class Game {
         return this.phrases[index];
     }
 
+    /*Checks to see if a button clicked by the player matches 
+    * a letter in the phrase, and then directs the game based on 
+    * a correct or incorrect guess.
+    */
     handleInteraction(button, buttonValue) {
         button.disabled = true;
         const phrase = this.activePhrase;
@@ -46,11 +50,12 @@ class Game {
             }
             this.checkForWin();
     } 
-
+    
+    /*Removes a life from the scoreboard */
     removeLife() {
         const liveHeart = document.querySelector('img[src="images/liveHeart.png"]');
-            liveHeart.src = "images/lostHeart.png";
-            this.missed++;
+        liveHeart.src = "images/lostHeart.png";
+        this.missed++;
     }
 
     /**
@@ -65,7 +70,9 @@ class Game {
         }      
     }
 
-
+    /**Displays the original start screen overlay.
+     * Depending on the outcome of the game, updates the overlay element 
+     ***/
     gameOver(winOrLoss, emoji, message) {        
         overlay.style.display = 'block';
         overlay.classList.remove('start');

@@ -19,6 +19,7 @@ const sadEmoji = document.querySelector('.sad');
 
 let game; 
 
+    /**Hiding "win" and "loss" message, and both emojis */
     winMessage.style.display = 'none';
     lostMessage.style.display = 'none';
     happyEmoji.style.display = 'none';
@@ -57,8 +58,8 @@ startGameButton.addEventListener('click', () =>  {
 
 /***
  * Event handler that lets users chose a letter by clicking
- * on a virtual keyboard AND use their physical keybord
- * Two event implemented in one event listener
+ * on a virtual keyboard OR use their physical keybord
+ * Two events implemented in one event listener
  */
 ['keydown', 'click'].forEach(event => {
         document.addEventListener(event, (e) => {

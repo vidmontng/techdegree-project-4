@@ -24,12 +24,12 @@ class Phrase {
             }
             HTMLforSplitPhrase.innerHTML = `${currentLetter}`;
             placeholder.appendChild(HTMLforSplitPhrase);
-            });
+        });
    }
 
 
     /**Checks if the letter selected by the player matches a letter in the phrase.
-     * Evokes showMatchedLetter() method
+     * Calls showMatchedLetter() method
      */
     checkLetter(letter) {
         const match = this.phrase.includes(letter);

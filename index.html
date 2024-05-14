@@ -13,7 +13,9 @@
 	<body>
 		<div class="main-container">
 			<div id="overlay" class="start">
-				<h2 class="title">Phrase Hunter</h2>
+				<h2 class="title">Phrase Hunter</h2> 
+					<!-- replaced h1 with id "game-over" with a new div. the purpose was - to add the animation to -->
+					<!-- every letter of the "Congratulations!" message -->
 					<div class="congrats">
 							<span style="--i:1">C</span>
 							<span style="--i:2">o</span>
@@ -33,10 +35,12 @@
 							<span style="--i:16">!</span>
 					</div>
 
+				<!-- added h1 for the "Sorry..." message in case a player loses -->
 				<h1 class="sorry">Sorry! Better luck next time!</h1>
 				
 				<button id="btn__reset">Start Game</button>
 				
+				<!-- added two img elements to the #overlay div - happy emoji for a win, sad emoji for a loss  -->
 				<img class='happy' alt="happy_emoji" src="images2/happy_emoji.png" height="300" width="300">
 				<img class='sad' alt="sad_emoji" src="images2/sad_emoji.png" height="240" width="240">
 

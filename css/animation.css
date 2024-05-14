@@ -1,10 +1,13 @@
-
+/* Style for the "Congratulatons!" message with a mirror reflection to it */
 .congrats {
   position: relative;
   -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
   font-size: 100px;
   margin-bottom: 120px;
 }
+
+/* Style for every letter of "Congratulations!" message. Color changed to red, changed the font to  Cursive, Lucida Handwriting */
+/* Added animation where every letter will be moved up and back down for a second with a delay that will form a wave */
 .congrats span {
   font-family: Cursive, 'Lucida Handwriting';
   position: relative;
@@ -15,28 +18,18 @@
   animation-delay: calc(.1s * var(--i));
 }
 
-
+/* Style for both emojis. They both will appear rotating for 2 seconds */
 .happy, 
 .sad {
   animation: emojiRotation 2s forwards;
 }
 
+/* Style for the "loss" message. It will appear rotating for 1 second */
 .sorry {
   animation: textRotation 1s forwards;
- 
 }
-/* .sad-revealed {
-    display: block;
-    animation-name: revealSadEmoji;
 
-} */
-
-
-@keyframes revealSadEmoji {
-    from {height: 0; width: 0;}
-    to {height:280; width: 280}
-  }
-
+/* bouncing animation */
 @keyframes wave {
   0%,40%,100% {
     transform: translateY(0)
@@ -45,13 +38,14 @@
     transform: translateY(-20px)
   }
 }
-
+/* rotation for text message */
   @keyframes textRotation {
     from {font-size: 30px;}
     to {font-size: 100px;}
     100% {transform: rotate(1080deg); } 
   }
 
+/* rotation for emojis */
   @keyframes emojiRotation {
     to {height: 300px; width: 300px}
     100% {transform: rotate(1080deg); } 

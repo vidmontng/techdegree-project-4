@@ -14,15 +14,15 @@
 *     'win' - increased the font to 155px; changed the font family to Cursive, Lucida Handwriting; 
               changed the color to purple; added animation that will rotate the element 1080degrees for 1second.
      'lose' - set up the font to 60px; font-family - Sans-serif, Verdana; color - purple;
-  - 'color-win' - backgroun color for the case if a player won has been changed to pale pink
-  - 'color-lose' - changed to dark yellow
-  - 'color-start' - the background of the overlay was changed to pale blue. 
+  + 'color-win' - background color for the case if a player won has been changed to pale pink
+  + 'color-lose' - changed to dark yellow
+  + 'color-start' - the background of the overlay was changed to pale blue. 
 */
 
 :root {
-  --color-win: #e2bae2;
-  --color-lose: #daa04a;
-  --color-start: #96c8df;
+  --color-win: #e2bae2; 
+  --color-lose: #daa04a; 
+  --color-start: #96c8df; 
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
@@ -54,8 +54,8 @@ li, ol, ul {
 h2 {
   margin: 0;
   text-transform: uppercase;
-  font-family: 'Fantasy', 'Papyrus';
-  font-size: 4em;
+  font-family: 'Fantasy', 'Papyrus';  /*changed font of the h2 element to Fantasy, Papyrus*/
+  font-size: 4em; /*changed the font size to 4em*/
   margin: 0;
 }
 
@@ -66,9 +66,9 @@ h1 {
 
 button {
   margin: 6px;
-  border: 2px solid rgba(248, 183, 239, 0.507);
+  border: 2px solid rgba(248, 183, 239, 0.507); /*changed the border of the buttons: made it thicker, changed the color to pale pink*/
   padding: .5rem 1rem;
-  box-shadow: 0 4px 4px 0 rgba(95, 67, 67, 0.2), 0 4px 4px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 4px 4px 0 rgba(95, 67, 67, 0.2), 0 4px 4px 0 rgba(0,0,0,0.19); /*added shadows*/
   color: var(--color-keys);
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
@@ -82,7 +82,7 @@ button {
 #btn__reset {
 	width: 200px;
 	margin: 0 auto;
-  border: 6px solid rgba(25, 31, 27, 0.507);
+  border: 6px solid rgba(194, 192, 194, 0.507); /*made te border of the start button thicker and changed border's color to light gray*/
 }
 
 .main-container {
@@ -106,7 +106,7 @@ button {
 /* Title */
 
 .header {
-  color: #5672a7;
+  color: #5672a7; /*the color of the header was changed to blue*/
 }
 
 
@@ -117,9 +117,8 @@ button {
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
-  margin-right: 3px;
-  margin-left: 3px;
-  box-shadow: 3px 3px 3px 3px rgba(153, 128, 152, 0.144);
+  margin-right: 2px;
+  box-shadow: 3px 3px 3px 3px rgba(153, 128, 152, 0.144); /*added shadows to all letters*/
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
@@ -194,19 +193,14 @@ button {
   border-radius: 5px;
 }
 
-.btn-win {
-  color: rgba(66, 53, 175, 0);
-
-}
-
-.title {
+.title {                /*The color of the title was changed to blue, the font was made bolder, font-size was increased to 75px*/
   color: #5672a7;
   font-weight: bolder;
   font-size: 75px;
 }
 
 .start {
-  background-color: #b4ddf5;
+  background-color: #b4ddf5;  /*changed the color of the overlay background to light blue*/
 }
 
 .start a {
@@ -221,8 +215,6 @@ button {
   color: var(--color-win);
 }
 
-
-
 .lose {
   background-color: #f5785f;
 }
@@ -232,9 +224,9 @@ button {
 }
 
 .happy {
-  margin: 30px auto 30px auto;
+  margin: 30px auto 30px auto;  /*styles for a happy emoji - to make it appear in the middle of the screen*/
 }
 
 .sad {
-  margin: 80px auto 30px auto;
+  margin: 80px auto 30px auto;  /*styles for a sad emoji - to make it appear in the middle of the screen*/
 }
